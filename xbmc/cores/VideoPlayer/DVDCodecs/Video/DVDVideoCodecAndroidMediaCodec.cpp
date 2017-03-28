@@ -27,6 +27,7 @@
 
 #include "DVDVideoCodecAndroidMediaCodec.h"
 
+#include <androidjni/Build.h>
 #include <androidjni/ByteBuffer.h>
 #include <androidjni/MediaCodecList.h>
 #include <androidjni/MediaCodecInfo.h>
@@ -46,7 +47,6 @@
 #include "cores/VideoPlayer/VideoRenderers/RenderFlags.h"
 
 #include "platform/android/activity/AndroidFeatures.h"
-#include "platform/android/jni/Build.h"
 #include "settings/Settings.h"
 
 #include <GLES2/gl2.h>
