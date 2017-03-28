@@ -1409,7 +1409,8 @@ void CDVDVideoCodecAndroidMediaCodec::InitSurfaceTexture(void)
   m_surfaceTexture = std::shared_ptr<CJNISurfaceTexture>(new CJNISurfaceTexture(m_textureId));
   // hook the surfaceTexture OnFrameAvailable callback
   m_frameAvailable = std::shared_ptr<CDVDMediaCodecOnFrameAvailable>(new CDVDMediaCodecOnFrameAvailable(m_surfaceTexture));
-  m_surface = new CJNISurface(*m_surfaceTexture);
+  m_jnisurface = new CJNISurface(*m_surfaceTexture);
+  m_surface = ANativeWindow_fromSurface(xbmc_jnienv(), m_jnisurface->get_raw());
 
   return;
 }
